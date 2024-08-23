@@ -291,6 +291,10 @@ defmodule Instructor.JSONSchema do
     }
   end
 
+  defp for_type({:parameterized, {mod, state}}) do
+    for_type({:parameterized, {mod, state}})
+  end
+
   defp for_type(mod) do
     if function_exported?(mod, :to_json_schema, 0) do
       mod.to_json_schema()
